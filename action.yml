@@ -1,0 +1,44 @@
+name: 'Update MicroVisualizer Service'
+description: 'Sync a service definition to a MicroVisualizer project'
+author: 'microvisualizer'
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
+inputs:
+  project-id:
+    description: 'MicroVisualizer project ID'
+    required: true
+  api-key:
+    description: 'MicroVisualizer API key'
+    required: true
+  service:
+    description: 'Inline JSON or YAML service definition'
+    required: false
+  service-src:
+    description: 'Path to a JSON or YAML service definition file'
+    required: false
+  api-url:
+    description: 'Base URL of the MicroVisualizer API'
+    required: false
+    default: 'https://api.microvisualizer.com'
+  allow-create:
+    description: 'Allow creating a new service if it does not exist'
+    required: false
+    default: 'true'
+  dry-run:
+    description: 'Log the resolved payload without making API calls'
+    required: false
+    default: 'false'
+
+outputs:
+  slug:
+    description: 'The slug of the created or updated service'
+  operation:
+    description: "Either 'created', 'updated', or 'skipped' (dry-run)"
+  url:
+    description: 'Direct URL to the service in MicroVisualizer'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

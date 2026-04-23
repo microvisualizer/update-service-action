@@ -1,0 +1,5 @@
+name: Payments
+description: Payment processing service
+type: http
+config:
+  baseUrl: https://payments.example.com

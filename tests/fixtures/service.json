@@ -1,0 +1,8 @@
+{
+  "name": "Orders",
+  "description": "Order management service",
+  "type": "http",
+  "config": {
+    "baseUrl": "https://orders.example.com"
+  }
+}
